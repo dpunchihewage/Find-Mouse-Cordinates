@@ -1,6 +1,19 @@
 import pyautogui
 import time
-time.sleep(3)
 
-# Display the cordinates of the mouse pointer
-print(pyautogui.position())
+def get_mouse_position():
+    # Wait for 3 seconds to give the user time to move the mouse pointer
+    time.sleep(3)
+
+    # Return the current position of the mouse pointer
+    return pyautogui.position()
+
+def main():
+    # Get the current position of the mouse pointer
+    position = get_mouse_position()
+
+    # Display the coordinates of the mouse pointer
+    print(position)
+
+if __name__ == '__main__':
+    main()

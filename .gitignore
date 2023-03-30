@@ -1,6 +1,28 @@
 import pyautogui
 import time
-time.sleep(3)
 
-# Display the cordinates of the mouse pointer
-print(pyautogui.position())
+# base location codinates
+a = 1150
+b = 475
+
+# Given mouse pointer coordinates
+given_x, given_y = a, b
+
+# Move the mouse to the specified location
+pyautogui.moveTo(a, b)
+
+# Right-click the mouse
+pyautogui.rightClick()
+
+# Wait for the context menu to appear
+time.sleep(5)
+
+# Now move the mouse to the second location manually.
+# Get the current mouse position
+current_x, current_y = pyautogui.position()
+
+# Calculate the relative position
+relative_x, relative_y = current_x - given_x, current_y - given_y
+
+# Print the relative position
+print(f"Relative position: ({relative_x}, {relative_y})")
